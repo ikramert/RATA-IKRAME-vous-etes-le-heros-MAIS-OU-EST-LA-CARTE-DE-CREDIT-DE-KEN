@@ -1,7 +1,7 @@
 
 # Mais ou est la carte de crédit de Ken? 
 
-<img src="assets/logo.png" alt="Mon logo" width="300" height="200">
+<img src="assets/logo.png" alt="Mon logo" width="500" height="500">
 
 
 **Genre: Comédie / Drame**
