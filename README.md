@@ -13,4 +13,7 @@ Voici la premiere:    [Palette 1](https://coolors.co/palette/cdb4db-ffc8dd-ffafc
 Voici la deuxieme:  [Palette 2](https://coolors.co/palette/70d6ff-ff70a6-ff9770-ffd670-e9ff70)
 
 
-  
+## Diagramme
+
+Inline-style: 
+![Diagramme](assets/schema.png)
