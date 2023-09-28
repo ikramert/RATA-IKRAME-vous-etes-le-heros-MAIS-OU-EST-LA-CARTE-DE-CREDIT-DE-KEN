@@ -16,4 +16,5 @@ Voici la deuxieme:  [Palette 2](https://coolors.co/palette/70d6ff-ff70a6-ff9770-
 
 ## Diagramme
 
-![Diagramme](assets/schema.png)
+<img src="assets/schema.png" alt="Diagramme" width="500" height="600">
+
