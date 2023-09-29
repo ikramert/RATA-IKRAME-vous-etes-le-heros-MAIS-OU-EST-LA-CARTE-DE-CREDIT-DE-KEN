@@ -6,7 +6,7 @@
 **Genre: Comédie / Drame**
 **Inspiration: Barbie the movie** 
 
-[Développement web - Projet vous êtes le héros](https://smnarnold.com/projets/vous-etes-le-heros))      
+[Développement web - Projet vous êtes le héros](https://smnarnold.com/projets/vous-etes-le-heros)    
 
 **Palettes de couleurs**
 J'ai deux palettes de couleurs pour mon projet
