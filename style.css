@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Barbie";
+  src: url(/assets/fonts/barbie.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Fabulous Pink";
+  src: url(/assets/fonts/FabulousPinkDemo-K7LJ7.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bartex";
+  src: url(/assets/fonts/Bartex-2Opnd.ttf) format("truetype");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url(/assets/images/background_barbie_2.jpg);
+  background-size: cover;
+}
+
+#jeu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  width: 50%;
+  max-width: 70vh;
+  background: linear-gradient(
+    107deg,
+    rgba(255, 175, 204, 1) 48%,
+    rgba(234, 76, 137, 1) 100%
+  );
+  border-radius: 5%;
+  padding: 2%;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+#logo:hover {
+  transform: scale(1.2);
+}
+#titre {
+  font-family: "Barbie";
+  color: #ea4c89;
+  font-size: 3vh;
+}
+
+#paragraphe {
+  font-family: "Bartex";
+  font-size: 27px;
+  width: 70%;
+  text-align: center;
+}
+
+#image {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+#options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.bouton {
+  background-color: #ea4c89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Barbie";
+  font-size: 25px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.bouton:hover,
+.bouton:focus {
+  background-color: #f082ac;
+  transform: translateY(2px);
+}
