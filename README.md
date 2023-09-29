@@ -1,7 +1,7 @@
 
 # Mais ou est la carte de crédit de Ken? 
 
- ![Mon logo](assets/logo.png)
+ ![Mon logo](assets/images/logo.png)
 
 **Genre: Comédie / Drame**
 **Inspiration: Barbie the movie** 
@@ -17,5 +17,5 @@ Voici la deuxieme:  [Palette 2](https://coolors.co/palette/70d6ff-ff70a6-ff9770-
 
 ## Diagramme
 
-![Diagramme](assets/schema.png)
+![Diagramme](assets/images/schema.png)
 
