@@ -114,7 +114,6 @@ let chapters = {
 };
 
 // PS3.2
-
 function goToChapter(chapitreCle) {
   if (chapters[chapitreCle]) {
     let chapitre = chapters[chapitreCle];
