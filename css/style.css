@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Barbie";
+  src: url(/assets/fonts/barbie.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Fabulous Pink";
+  src: url(/assets/fonts/FabulousPinkDemo-K7LJ7.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bartex";
+  src: url(/assets/fonts/Bartex-2Opnd.ttf) format("truetype");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(-35deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#jeu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 90vh;
+  width: 50%;
+  max-width: 70vh;
+  background: linear-gradient(
+    107deg,
+    rgba(255, 175, 204, 1) 48%,
+    rgba(234, 76, 137, 1) 100%
+  );
+  border-radius: 5%;
+  padding: 2%;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+#logo:hover {
+  transform: scale(1.2);
+}
+#titre,
+#chapter-title {
+  font-family: "Barbie";
+  color: #ea4c89;
+  font-size: 3vh;
+}
+
+#paragraphe {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  font-family: "Bartex";
+  margin-top: 0;
+  font-size: 17px;
+  width: 40vw;
+  text-align: center;
+}
+
+/* background-color: #ea4c89 */
+button {
+  align-items: center;
+  background-color: #ffc8dd;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #ea4c89;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: "Barbie";
+  font-size: 15px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:focus {
+  color: #171e29;
+}
+
+button:hover {
+  border-color: #70d6ff;
+  color: black;
+  fill: black;
+}
+
+button:active {
+  border-color: #70d6ff;
+  color: black;
+  fill: black;
+}
+
+@media (min-width: 768px) {
+  button {
+    min-width: 170px;
+  }
+}
+@media (min-width: 768px) {
+  button {
+    padding: 0 40px;
+  }
+}
+#chapter-image {
+  display: flex;
+  top: 0;
+  justify-content: center;
+  width: 27vw;
+  height: 40vh;
+}
+
+#chapter-description {
+  font-family: "Bartex";
+  font-size: 30px;
+}
