@@ -1,3 +1,5 @@
+//TRAVAILLE PRESENTEMENT SUR MON CSS
+
 // la twist
 let twist = false;
 
@@ -14,7 +16,7 @@ let chapters = {
     titre: "Niveau 1 : Le Plan Fracassant",
     description:
       "Barbie découvre que la carte de crédit de Ken est cachée dans leur maison de poupée géante. Elle doit trouver un moyen de prendre la carte.",
-    image: "/assets/images/debut.gif", // Image du chapitre 1
+    video: "/assets/videos/barbie_choquer.mp4", // video du chapitre 1
     boutons: [
       {
         titre: "Engager des fourmis.",
@@ -30,7 +32,7 @@ let chapters = {
     titre: "Niveau 2 : L'Évasion",
     description:
       "Maintenant, il faut que Barbie aide les fourmis à s'échapper de la maison de poupée géante sans que Ken ne s’en rende compte. Il faut qu’elle fasse diversion. Choisissez un moyen de diversion.",
-    image: "/assets/images/evasion.jpg", // image du chapitre 2
+    video: "/assets/videos/barbie_surprise.mp4", // video du chapitre 2
     boutons: [
       {
         titre: "Un concert dans la cour.",
@@ -113,10 +115,27 @@ let chapters = {
   },
 };
 
+let audioElement = document.createElement("audio");
+audioElement.src = "/assets/sons/page_tourne.wav";
+document.body.appendChild(audioElement);
+
 // PS3.2
 function goToChapter(chapitreCle) {
   if (chapters[chapitreCle]) {
     let chapitre = chapters[chapitreCle];
+
+    // Sauvegarder la clé du chapitre en cours dans le localStorage
+    localStorage.setItem("currentChapter", chapitreCle);
+
+    // Sauvegarder l'état de la twist dans le localStorage
+    if (twist) {
+      localStorage.setItem("twistActivated", "true");
+    } else {
+      localStorage.removeItem("twistActivated");
+    }
+
+    audioElement.currentTime = 0;
+    audioElement.play();
 
     // Modification du titre de la page
     document.title = chapitre.titre;
@@ -128,13 +147,20 @@ function goToChapter(chapitreCle) {
     document.getElementById("chapter-description").innerText =
       chapitre.description;
 
-    // Modification de l'image du chapitre
-    document.getElementById("chapter-image").src = chapitre.image;
+    // Modification de l'image ou de la vidéo du chapitre
+    let mediaElement = document.getElementById("chapter-media");
+
+    if (chapitre.video) {
+      // Si le chapitre a une vidéo, affichez la vidéo
+      mediaElement.innerHTML = `<video id="chapter-video" muted autoplay loop><source src="${chapitre.video}" type="video/mp4"></video>`;
+    } else {
+      // Sinon, affichez l'image
+      mediaElement.innerHTML = `<img id="chapter-image" src="${chapitre.image}" alt="${chapitre.titre}">`;
+    }
 
     // Modification des boutons du chapitre
     let buttonsContainer = document.getElementById("buttons-container");
-    buttonsContainer.innerHTML = ""; // Efface les boutons précédents
-
+    buttonsContainer.innerHTML = "";
     if (chapitre.boutons.length > 0) {
       // Créez des boutons pour chaque option
       chapitre.boutons.forEach(function (bouton, index) {
@@ -165,6 +191,27 @@ function goToChapter(chapitreCle) {
 
 // Fonction pour afficher le premier chapitre
 function afficherPremierChapitre() {
-  goToChapter("introduction");
+  // Récupérer depuis le localStorage
+  let currentChapterKey = localStorage.getItem("currentChapter");
+  // afficher ce chapitre
+  if (currentChapterKey && chapters[currentChapterKey]) {
+    goToChapter(currentChapterKey);
+  } else {
+    // Sinon, afficher le premier chapitre
+    goToChapter("introduction");
+  }
 }
 afficherPremierChapitre();
+
+// Ajouter un événement "click" pour le bouton "Réinitialiser"
+let resetButton = document.getElementById("reset-button");
+
+if (resetButton) {
+  resetButton.addEventListener("click", function () {
+    // Supprimer toutes les variables dans le localStorage
+    localStorage.clear();
+
+    // Recharger la page pour revenir au début de l'histoire
+    window.location.reload();
+  });
+}
