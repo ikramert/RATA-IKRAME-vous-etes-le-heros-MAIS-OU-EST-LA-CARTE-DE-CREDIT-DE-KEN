@@ -22,7 +22,6 @@ body {
   background: linear-gradient(-35deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
-  height: 100vh;
 }
 
 @keyframes gradient {
@@ -39,17 +38,11 @@ body {
 
 #jeu {
   display: flex;
+  max-width: 70vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 90vh;
-  width: 50%;
-  max-width: 70vh;
-  background: linear-gradient(
-    107deg,
-    rgba(255, 175, 204, 1) 48%,
-    rgba(234, 76, 137, 1) 100%
-  );
+  background: linear-gradient(107deg, #ffafcc 48%, rgba(234, 76, 137, 1) 100%);
   border-radius: 5%;
   padding: 2%;
 }
@@ -66,7 +59,7 @@ body {
 #titre,
 #chapter-title {
   font-family: "Barbie";
-  color: #ea4c89;
+  color: #ec3b83;
   font-size: 3vh;
 }
 
@@ -78,73 +71,135 @@ body {
   font-family: "Bartex";
   margin-top: 0;
   font-size: 17px;
-  width: 40vw;
   text-align: center;
 }
 
-/* background-color: #ea4c89 */
+#buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 2.5%;
+}
 button {
   align-items: center;
-  background-color: #ffc8dd;
-  border: 2px solid #000;
+  background-clip: padding-box;
+  background-color: #ffcff1;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: #ea4c89;
+  color: #ec3b83;
   cursor: pointer;
   display: inline-flex;
-  fill: #000;
   font-family: "Barbie";
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  height: 48px;
   justify-content: center;
-  letter-spacing: 0.8px;
-  line-height: 24px;
-  min-width: 140px;
-  outline: 0;
-  padding: 0 17px;
-  text-align: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 250ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
 }
 
+button:hover,
 button:focus {
-  color: #171e29;
+  background-color: #add8e6;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 button:hover {
-  border-color: #70d6ff;
-  color: black;
-  fill: black;
+  transform: translateY(-1px);
 }
 
 button:active {
-  border-color: #70d6ff;
-  color: black;
-  fill: black;
-}
-
-@media (min-width: 768px) {
-  button {
-    min-width: 170px;
-  }
-}
-@media (min-width: 768px) {
-  button {
-    padding: 0 40px;
-  }
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
 }
 #chapter-media {
   display: flex;
   top: 0;
   justify-content: center;
-  width: 27vw;
-  height: 40vh;
 }
 
 #chapter-description {
   font-family: "Bartex";
   font-size: 30px;
+}
+
+video,
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#mute-checkbox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+}
+
+#mute-checkbox + label {
+  font-family: "Barbie";
+  font-size: 30px;
+  color: #ec3b83;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: fixed;
+  top: 12px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#mute-checkbox + label::before {
+  content: "🔊";
+  font-size: 27px;
+  margin-right: 5px;
+}
+
+#mute-checkbox:checked + label::before {
+  content: "🔇";
+}
+
+#mute-checkbox + label:hover::before {
+  color: #add8e6;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: 100% 100%;
+  }
+
+  #jeu {
+    max-width: 90vw;
+  }
+
+  #paragraphe {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  #mute-checkbox + label {
+    font-size: 20px;
+  }
+
+  #chapter-description {
+    font-size: 24px;
+  }
 }

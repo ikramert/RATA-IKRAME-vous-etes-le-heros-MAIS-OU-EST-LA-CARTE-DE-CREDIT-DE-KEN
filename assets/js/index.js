@@ -1,14 +1,12 @@
-//TRAVAILLE PRESENTEMENT SUR MON CSS
-
-// la twist
+// Twist (tournant dans l'intrigue)
 let twist = false;
 
-// Création de l'objet "chapters"
+// Objet des chapitres
 let chapters = {
   introduction: {
-    titre: "Mais ou es la carte de Ken?",
+    titre: "Mais où est la carte de Ken ?",
     description:
-      "Barbie doit absolument s’acheter une robe pour le bal de samedi. Sa carte de crédit est au maximum. Elle a pu une cenne! ...mais Ken, oui. Elle a besoin de sa carte, mais elle sait que Ken ne lui donnera pas. Il faut quelle l’obtienne a tout prix pour être la plus belle. Elle le remboursera, ne vous inquiétez pas.",
+      "Barbie doit absolument s’acheter une robe pour le bal de samedi. Sa carte de crédit est au maximum. Elle n'a pas un sou, mais Ken, oui. Elle a besoin de sa carte, mais elle sait que Ken ne lui donnera pas. Elle doit l’obtenir à tout prix pour être la plus belle. Elle le remboursera, ne vous inquiétez pas.",
     image: "/assets/images/commencer.gif",
     boutons: [{ titre: "Commencer !", destination: "debut" }],
   },
@@ -16,36 +14,23 @@ let chapters = {
     titre: "Niveau 1 : Le Plan Fracassant",
     description:
       "Barbie découvre que la carte de crédit de Ken est cachée dans leur maison de poupée géante. Elle doit trouver un moyen de prendre la carte.",
-    video: "/assets/videos/barbie_choquer.mp4", // video du chapitre 1
+    video: "/assets/videos/barbie_choquer.mp4", // vidéo du chapitre 1
     boutons: [
-      {
-        titre: "Engager des fourmis.",
-        destination: "evasion",
-      },
-      {
-        titre: "Organiser une fête surprise.",
-        destination: "surprise",
-      },
+      { titre: "Engager des fourmis.", destination: "evasion" },
+      { titre: "Organiser une fête surprise.", destination: "surprise" },
     ],
   },
   evasion: {
     titre: "Niveau 2 : L'Évasion",
     description:
-      "Maintenant, il faut que Barbie aide les fourmis à s'échapper de la maison de poupée géante sans que Ken ne s’en rende compte. Il faut qu’elle fasse diversion. Choisissez un moyen de diversion.",
-    video: "/assets/videos/barbie_surprise.mp4", // video du chapitre 2
+      "Maintenant, Barbie doit aider les fourmis à s'échapper de la maison de poupée géante sans que Ken ne s’en rende compte. Elle doit faire diversion. Choisissez un moyen de diversion.",
+    video: "/assets/videos/barbie_surprise.mp4", // vidéo du chapitre 2
     boutons: [
-      {
-        titre: "Un concert dans la cour.",
-        destination: "concert",
-      },
+      { titre: "Un concert dans la cour.", destination: "concert" },
       { titre: "Un feu au cabanon.", destination: "feu" },
-      {
-        titre: "Se jeter dans la piscine.",
-        destination: "noyade",
-      },
+      { titre: "Se jeter dans la piscine.", destination: "noyade" },
     ],
   },
-
   concert: {
     titre: "Niveau 3 : Le centre commercial",
     description:
@@ -56,7 +41,6 @@ let chapters = {
       { titre: "La robe rose.", destination: "roberose" },
     ],
   },
-
   surprise: {
     titre: "Fin - Fête Surprise",
     description:
@@ -64,48 +48,42 @@ let chapters = {
     image: "/assets/images/image_fin.gif", // l'image de fin
     boutons: [{ titre: "Recommencer.", destination: "debut" }],
   },
-
   feu: {
     titre: "Niveau 3 - Cabanon en feu",
     description:
-      "Le cabanon a coûté sept milles $ à détruire et reconstruire, vous êtes en dette vous deux.",
+      "Le cabanon a coûté sept mille $ à détruire et reconstruire, vous êtes endettés tous les deux.",
     image: "/assets/images/feu.gif", // l'image de feu/ fin
     boutons: [{ titre: "Recommencer.", destination: "debut" }],
   },
-
   noyade: {
     titre: "Niveau 3 - Noyade",
     description: "Aucun des deux ne sait nager, ils se sont noyés.",
     image: "/assets/images/noyade.jpg", // image noyade
     boutons: [{ titre: "Recommencer.", destination: "debut" }],
   },
-
   robebleue: {
     titre: "Niveau 4 - Robe bleue",
     description:
-      "Barbie a pris du poids. Elle ne rentre pas dans la robe et a brisé le zipper. Il faut qu'elle paye pour les dommages. Elle ne peut plus aller au Bal.",
-    image: "/assets/images/robe_bleue.gif", // image barbie robe blueue
+      "Barbie a pris du poids. Elle ne rentre pas dans la robe et a cassé la fermeture éclair. Il faut qu'elle paie pour les dommages. Elle ne peut plus aller au bal.",
+    image: "/assets/images/robe_bleue.gif", // image barbie robe bleue
     boutons: [{ titre: "Recommencer.", destination: "debut" }],
   },
-
   roberose: {
     titre: "Niveau 4 - Robe rose",
     description:
-      "Barbie a enfin sa robe, elle est prête pour le bal. Elle doit passer à la caisse, mais celle-ci se sent coupable. Que doit-elle faire?",
+      "Barbie a enfin sa robe, elle est prête pour le bal. Elle doit passer à la caisse, mais celle-ci se sent coupable. Que doit-elle faire ?",
     image: "/assets/images/robe_rose.gif", // Robe rose
     boutons: [
       { titre: "Payer.", destination: "payer" },
       { titre: "Dire la vérité.", destination: "verite" },
     ],
   },
-
   payer: {
     titre: "Fin - Payer",
-    description: "Oups! Barbie n’a pas le NIP de la carte...",
-    image: "/assets/images/payer.gif", // image carte de credit
+    description: "Oups ! Barbie n’a pas le NIP de la carte...",
+    image: "/assets/images/payer.gif", // image carte de crédit
     boutons: [{ titre: "Recommencer.", destination: "debut" }],
   },
-
   verite: {
     titre: "Fin - Dire la vérité",
     description:
@@ -115,61 +93,96 @@ let chapters = {
   },
 };
 
-let audioElement = document.createElement("audio");
-audioElement.src = "/assets/sons/page_tourne.wav";
-document.body.appendChild(audioElement);
+// Éléments audio
+let trameSonoreElement = creerElementAudio("/assets/chansons/trame_sonore.mp3");
+let tournerPageElement = creerElementAudio("/assets/sons/page_tourne.wav");
 
-// PS3.2
+// Fonction pour créer un élément audio
+function creerElementAudio(src) {
+  let audioElement = document.createElement("audio");
+  audioElement.src = src;
+  document.body.appendChild(audioElement);
+  return audioElement;
+}
+
+// Fonction pour vérifier si la sourdine est activée
+function isMuteChecked() {
+  let muteCheckbox = document.getElementById("mute-checkbox");
+  return muteCheckbox ? muteCheckbox.checked : false;
+}
+
+// Fonction pour jouer l'audio de la trame sonore
+function playTrameSonore() {
+  if (!isMuteChecked()) {
+    trameSonoreElement.currentTime = 0;
+    trameSonoreElement.play();
+  } else {
+    trameSonoreElement.pause();
+  }
+}
+
+// Fonction pour jouer l'audio de la page qui tourne
+function playTournerPage() {
+  if (!isMuteChecked()) {
+    tournerPageElement.currentTime = 0;
+    tournerPageElement.play();
+  }
+}
+
+// PS3.2 - Fonction pour aller à un chapitre
 function goToChapter(chapitreCle) {
   if (chapters[chapitreCle]) {
     let chapitre = chapters[chapitreCle];
 
-    // Sauvegarder la clé du chapitre en cours dans le localStorage
+    // Sauvegarder la clé du chapitre actuel dans localStorage
     localStorage.setItem("currentChapter", chapitreCle);
 
-    // Sauvegarder l'état de la twist dans le localStorage
+    // Sauvegarder l'état du twist dans localStorage
     if (twist) {
       localStorage.setItem("twistActivated", "true");
     } else {
       localStorage.removeItem("twistActivated");
     }
 
-    audioElement.currentTime = 0;
-    audioElement.play();
+    // Réinitialiser le temps actuel de l'audio
+    playTrameSonore();
 
-    // Modification du titre de la page
+    // Jouer l'audio de la page qui tourne
+    playTournerPage();
+
+    // Modifier le titre de la page
     document.title = chapitre.titre;
 
-    // Modification du titre du chapitre
+    // Modifier le titre du chapitre
     document.getElementById("chapter-title").innerText = chapitre.titre;
 
-    // Modification de la description du chapitre
+    // Modifier la description du chapitre
     document.getElementById("chapter-description").innerText =
       chapitre.description;
 
-    // Modification de l'image ou de la vidéo du chapitre
+    // Modifier l'image ou la vidéo du chapitre
     let mediaElement = document.getElementById("chapter-media");
 
     if (chapitre.video) {
-      // Si le chapitre a une vidéo, affichez la vidéo
+      // Si le chapitre a une vidéo, afficher la vidéo
       mediaElement.innerHTML = `<video id="chapter-video" muted autoplay loop><source src="${chapitre.video}" type="video/mp4"></video>`;
     } else {
-      // Sinon, affichez l'image
+      // Sinon, afficher l'image
       mediaElement.innerHTML = `<img id="chapter-image" src="${chapitre.image}" alt="${chapitre.titre}">`;
     }
 
-    // Modification des boutons du chapitre
+    // Modifier les boutons du chapitre
     let buttonsContainer = document.getElementById("buttons-container");
     buttonsContainer.innerHTML = "";
     if (chapitre.boutons.length > 0) {
-      // Créez des boutons pour chaque option
+      // Créer des boutons pour chaque option
       chapitre.boutons.forEach(function (bouton, index) {
         let buttonElement = document.createElement("button");
         buttonElement.innerText = bouton.titre;
 
-        // Ajout d'un événement "click" pour chaque bouton
+        // Ajouter un événement "click" pour chaque bouton
         buttonElement.addEventListener("click", function () {
-          // Quand le bouton est cliqué, allez au chapitre correspondant
+          // Lorsque le bouton est cliqué, aller au chapitre correspondant
           goToChapter(bouton.destination);
         });
 
@@ -180,7 +193,7 @@ function goToChapter(chapitreCle) {
       buttonsContainer.innerHTML = "<p>Fin du jeu.</p>";
     }
 
-    // Vérification et modification de la variable twist
+    // Vérifier et modifier la variable twist
     if (chapitreCle === "payer") {
       twist = true;
     }
@@ -191,27 +204,64 @@ function goToChapter(chapitreCle) {
 
 // Fonction pour afficher le premier chapitre
 function afficherPremierChapitre() {
-  // Récupérer depuis le localStorage
+  // Récupérer depuis localStorage
   let currentChapterKey = localStorage.getItem("currentChapter");
-  // afficher ce chapitre
+  // Afficher ce chapitre
   if (currentChapterKey && chapters[currentChapterKey]) {
     goToChapter(currentChapterKey);
   } else {
     // Sinon, afficher le premier chapitre
     goToChapter("introduction");
   }
+
+  // Démarrer l'audio lors de l'affichage du premier chapitre
+  playTrameSonore();
 }
+
 afficherPremierChapitre();
+
+// Ajouter un événement "change" pour la case à cocher "Mute"
+let muteCheckbox = document.getElementById("mute-checkbox");
+
+if (muteCheckbox) {
+  muteCheckbox.addEventListener("change", function () {
+    // Appeler la fonction playTrameSonore lorsque l'état de la sourdine change
+    playTrameSonore();
+  });
+}
 
 // Ajouter un événement "click" pour le bouton "Réinitialiser"
 let resetButton = document.getElementById("reset-button");
 
 if (resetButton) {
   resetButton.addEventListener("click", function () {
-    // Supprimer toutes les variables dans le localStorage
+    // Réinitialiser l'option de sourdine
+    if (muteCheckbox) {
+      muteCheckbox.checked = false;
+    }
+
+    // Effacer le localStorage
     localStorage.clear();
 
-    // Recharger la page pour revenir au début de l'histoire
+    // Recharger la page pour redémarrer l'histoire
     window.location.reload();
   });
+}
+
+if (muteCheckbox) {
+  muteCheckbox.addEventListener("change", function () {
+    // Appeler la fonction playTrameSonore lorsque l'état de la sourdine change
+    playTrameSonore();
+
+    // Sauvegarder l'état de la sourdine dans localStorage
+    localStorage.setItem("muteStatus", muteCheckbox.checked.toString());
+  });
+
+  // Récupérer l'état de la sourdine depuis localStorage
+  let savedMuteStatus = localStorage.getItem("muteStatus");
+
+  if (savedMuteStatus !== null) {
+    // Mettre à jour l'état de la sourdine en fonction de la valeur sauvegardée
+    muteCheckbox.checked = savedMuteStatus === "true";
+  }
 }
