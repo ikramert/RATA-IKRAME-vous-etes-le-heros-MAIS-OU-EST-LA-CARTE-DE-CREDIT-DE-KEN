@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Barbie";
-  src: url("/assets/fonts/barbie.ttf") format("truetype");
+  src: url("../fonts/barbie.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Bartex";
-  src: url("/assets/fonts/Bartex-2Opnd.ttf") format("truetype");
+  src: url("../fonts/Bartex-2Opnd.ttf") format("truetype");
 }
 
 @font-face {
