@@ -14,7 +14,7 @@ let chapters = {
     titre: "Niveau 1 : Le Plan Fracassant",
     description:
       "Barbie découvre que la carte de crédit de Ken est cachée dans leur maison de poupée géante. Elle doit trouver un moyen de prendre la carte.",
-    video: "/assets/videos/barbie_choquer.mp4", // video du chapitre 1
+    video: "./assets/videos/barbie_choquer.mp4", // video du chapitre 1
     boutons: [
       {
         titre: "Engager des fourmis",
