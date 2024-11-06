@@ -7,7 +7,7 @@ let chapters = {
     titre: "Mais où es la carte de crédit de Ken?",
     description:
       "Barbie doit absolument acheter une robe pour le bal de samedi, mais sa carte est vide. Heureusement, celle de Ken est pleine ! La beauté n’a pas de prix, n’est-ce pas ?",
-    image: "../assets/images/commencer.gif",
+    image: "./assets/images/commencer.gif",
     boutons: [{ titre: "Commencer! ", destination: "debut" }],
   },
   debut: {
