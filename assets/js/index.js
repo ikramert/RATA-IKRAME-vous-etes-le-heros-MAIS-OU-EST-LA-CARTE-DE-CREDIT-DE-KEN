@@ -14,7 +14,7 @@ let chapters = {
     titre: "Niveau 1 : Le Plan Fracassant",
     description:
       "Barbie découvre que la carte de crédit de Ken est cachée dans leur maison de poupée géante. Elle doit trouver un moyen de prendre la carte.",
-    video: "/assets/videos/barbie_choquer.mp4", // video du chapitre 1
+    video: "./assets/videos/barbie_choquer.mp4", // video du chapitre 1
     boutons: [
       {
         titre: "Engager des fourmis",
@@ -30,7 +30,7 @@ let chapters = {
     titre: "Niveau 2 : L'Évasion",
     description:
       "Maintenant, il faut que Barbie aide les fourmis à s'échapper de la maison de poupée géante sans que Ken ne s’en rende compte. Il faut qu’elle fasse diversion. Choisissez un moyen de diversion.",
-    video: "/assets/videos/barbie_surprise.mp4", // video du chapitre 2
+    video: "./assets/videos/barbie_surprise.mp4", // video du chapitre 2
     boutons: [
       {
         titre: "Un concert dans la cour",
@@ -48,7 +48,7 @@ let chapters = {
     titre: "Niveau 3 : Le centre commercial",
     description:
       "Barbie est au centre commercial avec la carte de crédit de Ken et se rend à la boutique Coco Loco. Ils ont deux robes qu'elle veut. Aidez-la à choisir une robe. Son choix va impacter son aventure.",
-    image: "/assets/images/centre_commerical.gif", // image du chapitre 3
+    image: "./assets/images/centre_commerical.gif", // image du chapitre 3
     boutons: [
       { titre: "La robe bleue", destination: "robebleue" },
       { titre: "La robe rose", destination: "roberose" },
@@ -59,7 +59,7 @@ let chapters = {
     titre: "Fin - Fête Surprise",
     description:
       "Ken ne fait pas tomber sa carte, Barbie n’aura pas sa carte de crédit.",
-    image: "/assets/images/image_fin.gif", // l'image de fin
+    image: "./assets/images/image_fin.gif", // l'image de fin
     boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 
@@ -67,14 +67,14 @@ let chapters = {
     titre: "Niveau 3 - Cabanon en feu",
     description:
       "Le cabanon a coûté sept milles $ à détruire et reconstruire, vous êtes en dette vous deux.",
-    image: "/assets/images/feu.gif", // l'image de feu/ fin
+    image: "./assets/images/feu.gif", // l'image de feu/ fin
     boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 
   noyade: {
     titre: "Niveau 3 - Noyade",
     description: "Aucun des deux ne sait nager, ils se sont noyés.",
-    image: "/assets/images/noyade.jpg", // image noyade
+    image: "./assets/images/noyade.jpg", // image noyade
     boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 
@@ -82,7 +82,7 @@ let chapters = {
     titre: "Niveau 4 - Robe bleue",
     description:
       "Barbie a pris du poids. Elle ne rentre pas dans la robe et a brisé le zipper. Il faut qu'elle paye pour les dommages. Elle ne peut plus aller au Bal.",
-    image: "/assets/images/robe_bleue.gif", // image barbie robe blueue
+    image: "./assets/images/robe_bleue.gif", // image barbie robe blueue
     boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 
@@ -90,7 +90,7 @@ let chapters = {
     titre: "Niveau 4 - Robe rose",
     description:
       "Barbie a enfin sa robe, elle est prête pour le bal. Elle doit passer à la caisse, mais celle-ci se sent coupable. Que doit-elle faire?",
-    image: "/assets/images/robe_rose.gif", // Robe rose
+    image: "./assets/images/robe_rose.gif", // Robe rose
     boutons: [
       { titre: "Payer", destination: "payer" },
       { titre: "Dire la vérité", destination: "verite" },
@@ -100,7 +100,7 @@ let chapters = {
   payer: {
     titre: "Fin - Payer",
     description: "Oups! Barbie n’a pas le NIP de la carte...",
-    image: "/assets/images/payer.gif", // image carte de credit
+    image: "./assets/images/payer.gif", // image carte de credit
     boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 
@@ -108,7 +108,7 @@ let chapters = {
     titre: "Fin - Dire la vérité",
     description:
       "Ken apprécie l'honnêteté de Barbie et décide de lui acheter sa robe.",
-    image: "/assets/images/verite.gif", // l'image de fin verite
+    image: "./assets/images/verite.gif", // l'image de fin verite
     boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 };
