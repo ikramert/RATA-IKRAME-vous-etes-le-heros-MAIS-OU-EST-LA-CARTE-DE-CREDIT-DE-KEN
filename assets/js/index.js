@@ -4,11 +4,11 @@ let twist = false;
 // Création de l'objet "chapters"
 let chapters = {
   introduction: {
-    titre: "Mais ou es la carte de Ken?",
+    titre: "Mais où es la carte de crédit de Ken?",
     description:
       "Barbie doit absolument s’acheter une robe pour le bal de samedi. Sa carte de crédit est au maximum. Elle a pu une cenne! ...mais Ken, oui. Elle a besoin de sa carte, mais elle sait que Ken ne lui donnera pas. Il faut quelle l’obtienne a tout prix pour être la plus belle. Elle le remboursera, ne vous inquiétez pas.",
     image: "/assets/images/commencer.gif",
-    boutons: [{ titre: "Commencer !", destination: "debut" }],
+    boutons: [{ titre: "Commencer! ", destination: "debut" }],
   },
   debut: {
     titre: "Niveau 1 : Le Plan Fracassant",
@@ -17,11 +17,11 @@ let chapters = {
     video: "/assets/videos/barbie_choquer.mp4", // video du chapitre 1
     boutons: [
       {
-        titre: "Engager des fourmis.",
+        titre: "Engager des fourmis",
         destination: "evasion",
       },
       {
-        titre: "Organiser une fête surprise.",
+        titre: "Organiser une fête surprise",
         destination: "surprise",
       },
     ],
@@ -33,12 +33,12 @@ let chapters = {
     video: "/assets/videos/barbie_surprise.mp4", // video du chapitre 2
     boutons: [
       {
-        titre: "Un concert dans la cour.",
+        titre: "Un concert dans la cour",
         destination: "concert",
       },
-      { titre: "Un feu au cabanon.", destination: "feu" },
+      { titre: "Un feu au cabanon", destination: "feu" },
       {
-        titre: "Se jeter dans la piscine.",
+        titre: "Se jeter dans la piscine",
         destination: "noyade",
       },
     ],
@@ -50,8 +50,8 @@ let chapters = {
       "Barbie est au centre commercial avec la carte de crédit de Ken et se rend à la boutique Coco Loco. Ils ont deux robes qu'elle veut. Aidez-la à choisir une robe. Son choix va impacter son aventure.",
     image: "/assets/images/centre_commerical.gif", // image du chapitre 3
     boutons: [
-      { titre: "La robe bleue.", destination: "robebleue" },
-      { titre: "La robe rose.", destination: "roberose" },
+      { titre: "La robe bleue", destination: "robebleue" },
+      { titre: "La robe rose", destination: "roberose" },
     ],
   },
 
@@ -92,8 +92,8 @@ let chapters = {
       "Barbie a enfin sa robe, elle est prête pour le bal. Elle doit passer à la caisse, mais celle-ci se sent coupable. Que doit-elle faire?",
     image: "/assets/images/robe_rose.gif", // Robe rose
     boutons: [
-      { titre: "Payer.", destination: "payer" },
-      { titre: "Dire la vérité.", destination: "verite" },
+      { titre: "Payer", destination: "payer" },
+      { titre: "Dire la vérité", destination: "verite" },
     ],
   },
 
@@ -130,8 +130,9 @@ function isMuteChecked() {
 // Fonction pour jouer l'audio de la trame sonore
 function playTrameSonore() {
   if (!isMuteChecked()) {
-    trameSonoreElement.currentTime = 0;
-    trameSonoreElement.play();
+    if (trameSonoreElement.paused) { // Vérifie si la trame sonore est déjà en lecture
+      trameSonoreElement.play();
+    }
   } else {
     trameSonoreElement.pause(); // Mettre en pause la trame sonore si la case "mute" est cochée
   }
@@ -145,6 +146,24 @@ function playTournerPage() {
   }
 }
 
+// Fonction pour naviguer vers un chapitre spécifique
+function goToChapter(chapitreCle) {
+  if (chapters[chapitreCle]) {
+    let chapitre = chapters[chapitreCle];
+
+    // Sauvegarder la clé du chapitre actuel dans localStorage
+    localStorage.setItem("currentChapter", chapitreCle);
+
+    // Sauvegarder l'état du twist dans localStorage
+    if (twist) {
+      localStorage.setItem("twistActivated", "true");
+    } else {
+      localStorage.removeItem("twistActivated");
+    }
+  }
+}
+    // Jouer l'audio de la page qui tourne
+    playTournerPage();
 // PS3.2
 function goToChapter(chapitreCle) {
   if (chapters[chapitreCle]) {
@@ -281,3 +300,4 @@ if (muteCheckbox) {
     muteCheckbox.checked = savedMuteStatus === "true";
   }
 }
+

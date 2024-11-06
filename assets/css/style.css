@@ -1,27 +1,32 @@
 @font-face {
   font-family: "Barbie";
-  src: url(/assets/fonts/barbie.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Fabulous Pink";
-  src: url(/assets/fonts/FabulousPinkDemo-K7LJ7.ttf) format("truetype");
+  src: url("/assets/fonts/barbie.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Bartex";
-  src: url(/assets/fonts/Bartex-2Opnd.ttf) format("truetype");
+  src: url("/assets/fonts/Bartex-2Opnd.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rusty";
+  src: url("/assets/fonts/RustyHooksRegular-nROER.ttf") format("truetype");
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background: linear-gradient(-35deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-35deg, #f8a5c2, #f7acc7, #b5e2f3, #c2f1e3);
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
+  margin: 0;
+  height: 100vh;
 }
 
 @keyframes gradient {
@@ -38,39 +43,32 @@ body {
 
 #jeu {
   display: flex;
-  max-width: 70vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: linear-gradient(107deg, #ffafcc 48%, rgba(234, 76, 137, 1) 100%);
-  border-radius: 5%;
+  justify-content: flex-start;
+  background-color: #ff99cc;
+  box-shadow: 10px 10px 38px 19px rgba(0, 0, 0, 0.45);
   padding: 2%;
+  max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-#logo {
+.logo {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s;
 }
 
-#logo:hover {
-  transform: scale(1.2);
-}
-#titre,
-#chapter-title {
-  font-family: "Barbie";
-  color: #ec3b83;
-  font-size: 3vh;
+.logo:hover {
+  transform: scale(1.1);
 }
 
-#paragraphe {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-grow: 1;
-  font-family: "Bartex";
-  margin-top: 0;
-  font-size: 17px;
+#chapter-title,
+#titre {
+  font-family: "Rusty";
+  color: #ec3b83;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -80,38 +78,29 @@ body {
   justify-content: center;
   padding: 2.5%;
 }
+
 button {
   align-items: center;
-  background-clip: padding-box;
   background-color: #ffcff1;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #ec3b83;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px 0;
+  color: #2182a9;
   cursor: pointer;
-  display: inline-flex;
-  font-family: "Barbie";
-  font-size: 16px;
-  font-weight: 600;
+  font-family: "Rusty";
+  font-size: 20px;
   justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  margin: 0 10px;
+  padding: 2%;
   position: relative;
   text-decoration: none;
   transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
 }
 
 button:hover,
 button:focus {
-  background-color: #add8e6;
+  background-color: #4eaadf;
+  color: #ffcff1;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
@@ -124,15 +113,18 @@ button:active {
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   transform: translateY(0);
 }
+
 #chapter-media {
   display: flex;
-  top: 0;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 #chapter-description {
-  font-family: "Bartex";
-  font-size: 30px;
+  font-family: "Poppins";
+  font-size: 16px;
+  text-align: center;
 }
 
 video,
@@ -146,19 +138,76 @@ img {
   top: 20px;
   right: 20px;
   cursor: pointer;
+  z-index: 1;
+}
+
+#mute-checkbox + label {
+  font-family: "Barbie";
+  font-size: 20px;
+  color: #ec3b83;
+  background-color: white;
+  border-radius: 5px;
+  position: fixed;
+  top: 12px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#mute-checkbox + label::before {
+  content: "🔊";
+  font-size: 20px;
+}
+
+#mute-checkbox:checked + label::before {
+  content: "🔇";
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: 100% 100%;
+  }
+
+  #jeu {
+    width: 90%;
+    height: auto;
+    max-width: 90vw;
+    max-height: auto;
+  }
+
+  #mute-checkbox + label {
+    font-size: 20px;
+  }
+
+  #chapter-description {
+    font-size: 16px;
+  }
+}
+
+#buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 2.5%;
+}
+
+#mute-checkbox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
   opacity: 0;
   z-index: 1;
 }
 
 #mute-checkbox + label {
   font-family: "Barbie";
-  font-size: 30px;
+  font-size: 24px;
   color: #ec3b83;
   background-color: white;
   padding: 5px 10px;
   border-radius: 5px;
   position: fixed;
-  top: 12px;
   right: 30px;
   cursor: pointer;
   z-index: 1;
@@ -174,17 +223,16 @@ img {
   content: "🔇";
 }
 
-#mute-checkbox + label:hover::before {
-  color: #add8e6;
-}
-
 @media only screen and (max-width: 600px) {
   body {
     background-size: 100% 100%;
   }
 
   #jeu {
+    width: 90%;
+    height: auto;
     max-width: 90vw;
+    max-height: auto;
   }
 
   #paragraphe {
@@ -200,6 +248,27 @@ img {
   }
 
   #chapter-description {
-    font-size: 24px;
+    font-size: 16px;
   }
+}
+
+#reset-button {
+  background-color: #ff3377;
+  color: #f5f5f5;
+  font-family: "Barbie";
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  top: 12px;
+  left: 20px;
+  z-index: 10;
+}
+
+#reset-button:hover {
+  background-color: #33b5ff;
+  color: #ffcff1;
 }
