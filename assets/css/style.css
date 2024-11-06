@@ -67,7 +67,7 @@ body {
 #chapter-title,
 #titre {
   font-family: "Rusty";
-  color: #ec3b83;
+  color: #dd1985;
   font-size: 20px;
   text-align: center;
 }
@@ -85,11 +85,10 @@ button {
   border: 1px solid transparent;
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px 0;
-  color: #2182a9;
+  color: #dd1985;
   cursor: pointer;
   font-family: "Rusty";
   font-size: 20px;
-  justify-content: center;
   margin: 0 10px;
   padding: 2%;
   position: relative;
@@ -131,6 +130,7 @@ video,
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 5%;
 }
 
 #mute-checkbox {
