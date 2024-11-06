@@ -130,7 +130,8 @@ function isMuteChecked() {
 // Fonction pour jouer l'audio de la trame sonore
 function playTrameSonore() {
   if (!isMuteChecked()) {
-    if (trameSonoreElement.paused) { // Vérifie si la trame sonore est déjà en lecture
+    if (trameSonoreElement.paused) {
+      // Vérifie si la trame sonore est déjà en lecture
       trameSonoreElement.play();
     }
   } else {
@@ -162,8 +163,8 @@ function goToChapter(chapitreCle) {
     }
   }
 }
-    // Jouer l'audio de la page qui tourne
-    playTournerPage();
+// Jouer l'audio de la page qui tourne
+playTournerPage();
 // PS3.2
 function goToChapter(chapitreCle) {
   if (chapters[chapitreCle]) {
@@ -300,4 +301,3 @@ if (muteCheckbox) {
     muteCheckbox.checked = savedMuteStatus === "true";
   }
 }
-
