@@ -1,12 +1,12 @@
-// Twist (tournant dans l'intrigue)
+// la twist
 let twist = false;
 
-// Objet des chapitres
+// Création de l'objet "chapters"
 let chapters = {
   introduction: {
-    titre: "Mais où est la carte de Ken ?",
+    titre: "Mais ou es la carte de Ken?",
     description:
-      "Barbie doit absolument s’acheter une robe pour le bal de samedi. Sa carte de crédit est au maximum. Elle n'a pas un sou, mais Ken, oui. Elle a besoin de sa carte, mais elle sait que Ken ne lui donnera pas. Elle doit l’obtenir à tout prix pour être la plus belle. Elle le remboursera, ne vous inquiétez pas.",
+      "Barbie doit absolument s’acheter une robe pour le bal de samedi. Sa carte de crédit est au maximum. Elle a pu une cenne! ...mais Ken, oui. Elle a besoin de sa carte, mais elle sait que Ken ne lui donnera pas. Il faut quelle l’obtienne a tout prix pour être la plus belle. Elle le remboursera, ne vous inquiétez pas.",
     image: "/assets/images/commencer.gif",
     boutons: [{ titre: "Commencer !", destination: "debut" }],
   },
@@ -14,23 +14,36 @@ let chapters = {
     titre: "Niveau 1 : Le Plan Fracassant",
     description:
       "Barbie découvre que la carte de crédit de Ken est cachée dans leur maison de poupée géante. Elle doit trouver un moyen de prendre la carte.",
-    video: "/assets/videos/barbie_choquer.mp4", // vidéo du chapitre 1
+    video: "/assets/videos/barbie_choquer.mp4", // video du chapitre 1
     boutons: [
-      { titre: "Engager des fourmis.", destination: "evasion" },
-      { titre: "Organiser une fête surprise.", destination: "surprise" },
+      {
+        titre: "Engager des fourmis.",
+        destination: "evasion",
+      },
+      {
+        titre: "Organiser une fête surprise.",
+        destination: "surprise",
+      },
     ],
   },
   evasion: {
     titre: "Niveau 2 : L'Évasion",
     description:
-      "Maintenant, Barbie doit aider les fourmis à s'échapper de la maison de poupée géante sans que Ken ne s’en rende compte. Elle doit faire diversion. Choisissez un moyen de diversion.",
-    video: "/assets/videos/barbie_surprise.mp4", // vidéo du chapitre 2
+      "Maintenant, il faut que Barbie aide les fourmis à s'échapper de la maison de poupée géante sans que Ken ne s’en rende compte. Il faut qu’elle fasse diversion. Choisissez un moyen de diversion.",
+    video: "/assets/videos/barbie_surprise.mp4", // video du chapitre 2
     boutons: [
-      { titre: "Un concert dans la cour.", destination: "concert" },
+      {
+        titre: "Un concert dans la cour.",
+        destination: "concert",
+      },
       { titre: "Un feu au cabanon.", destination: "feu" },
-      { titre: "Se jeter dans la piscine.", destination: "noyade" },
+      {
+        titre: "Se jeter dans la piscine.",
+        destination: "noyade",
+      },
     ],
   },
+
   concert: {
     titre: "Niveau 3 : Le centre commercial",
     description:
@@ -41,69 +54,72 @@ let chapters = {
       { titre: "La robe rose.", destination: "roberose" },
     ],
   },
+
   surprise: {
     titre: "Fin - Fête Surprise",
     description:
       "Ken ne fait pas tomber sa carte, Barbie n’aura pas sa carte de crédit.",
     image: "/assets/images/image_fin.gif", // l'image de fin
-    boutons: [{ titre: "Recommencer.", destination: "debut" }],
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
+
   feu: {
     titre: "Niveau 3 - Cabanon en feu",
     description:
-      "Le cabanon a coûté sept mille $ à détruire et reconstruire, vous êtes endettés tous les deux.",
+      "Le cabanon a coûté sept milles $ à détruire et reconstruire, vous êtes en dette vous deux.",
     image: "/assets/images/feu.gif", // l'image de feu/ fin
-    boutons: [{ titre: "Recommencer.", destination: "debut" }],
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
+
   noyade: {
     titre: "Niveau 3 - Noyade",
     description: "Aucun des deux ne sait nager, ils se sont noyés.",
     image: "/assets/images/noyade.jpg", // image noyade
-    boutons: [{ titre: "Recommencer.", destination: "debut" }],
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
+
   robebleue: {
     titre: "Niveau 4 - Robe bleue",
     description:
-      "Barbie a pris du poids. Elle ne rentre pas dans la robe et a cassé la fermeture éclair. Il faut qu'elle paie pour les dommages. Elle ne peut plus aller au bal.",
-    image: "/assets/images/robe_bleue.gif", // image barbie robe bleue
-    boutons: [{ titre: "Recommencer.", destination: "debut" }],
+      "Barbie a pris du poids. Elle ne rentre pas dans la robe et a brisé le zipper. Il faut qu'elle paye pour les dommages. Elle ne peut plus aller au Bal.",
+    image: "/assets/images/robe_bleue.gif", // image barbie robe blueue
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
+
   roberose: {
     titre: "Niveau 4 - Robe rose",
     description:
-      "Barbie a enfin sa robe, elle est prête pour le bal. Elle doit passer à la caisse, mais celle-ci se sent coupable. Que doit-elle faire ?",
+      "Barbie a enfin sa robe, elle est prête pour le bal. Elle doit passer à la caisse, mais celle-ci se sent coupable. Que doit-elle faire?",
     image: "/assets/images/robe_rose.gif", // Robe rose
     boutons: [
       { titre: "Payer.", destination: "payer" },
       { titre: "Dire la vérité.", destination: "verite" },
     ],
   },
+
   payer: {
     titre: "Fin - Payer",
-    description: "Oups ! Barbie n’a pas le NIP de la carte...",
-    image: "/assets/images/payer.gif", // image carte de crédit
-    boutons: [{ titre: "Recommencer.", destination: "debut" }],
+    description: "Oups! Barbie n’a pas le NIP de la carte...",
+    image: "/assets/images/payer.gif", // image carte de credit
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
+
   verite: {
     titre: "Fin - Dire la vérité",
     description:
       "Ken apprécie l'honnêteté de Barbie et décide de lui acheter sa robe.",
     image: "/assets/images/verite.gif", // l'image de fin verite
-    boutons: [{ titre: "Recommencer.", destination: "debut" }],
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 };
 
-// Éléments audio
-let trameSonoreElement = creerElementAudio("/assets/chansons/trame_sonore.mp3");
-let tournerPageElement = creerElementAudio("/assets/sons/page_tourne.wav");
+let trameSonoreElement = document.createElement("audio");
+trameSonoreElement.src = "/assets/chansons/trame_sonore.mp3";
+document.body.appendChild(trameSonoreElement);
 
-// Fonction pour créer un élément audio
-function creerElementAudio(src) {
-  let audioElement = document.createElement("audio");
-  audioElement.src = src;
-  document.body.appendChild(audioElement);
-  return audioElement;
-}
+let tournerPageElement = document.createElement("audio");
+tournerPageElement.src = "/assets/sons/page_tourne.wav";
+document.body.appendChild(tournerPageElement);
 
 // Fonction pour vérifier si la sourdine est activée
 function isMuteChecked() {
@@ -117,7 +133,7 @@ function playTrameSonore() {
     trameSonoreElement.currentTime = 0;
     trameSonoreElement.play();
   } else {
-    trameSonoreElement.pause();
+    trameSonoreElement.pause(); // Mettre en pause la trame sonore si la case "mute" est cochée
   }
 }
 
@@ -129,7 +145,7 @@ function playTournerPage() {
   }
 }
 
-// PS3.2 - Fonction pour aller à un chapitre
+// PS3.2
 function goToChapter(chapitreCle) {
   if (chapters[chapitreCle]) {
     let chapitre = chapters[chapitreCle];

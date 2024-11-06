@@ -120,7 +120,7 @@ button:hover {
 }
 
 button:active {
-  background-color: #c85000;
+  background-color: #93c4d2;
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   transform: translateY(0);
 }
