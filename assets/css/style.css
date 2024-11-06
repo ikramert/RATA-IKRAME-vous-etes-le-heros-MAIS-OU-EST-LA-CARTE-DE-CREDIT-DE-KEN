@@ -18,11 +18,22 @@
   src: url("/assets/fonts/RustyHooksRegular-nROER.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "SuperUnicorn";
+  src: url("/assets/fonts/SuperUnicorn-3lm0L.ttf") format("truetype");
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-35deg, #f8a5c2, #f7acc7, #b5e2f3, #c2f1e3);
+  background: linear-gradient(
+    -35deg,
+    #f8b8d4,
+    #f7c0d6,
+    #a9e2f3,
+    #c2f1e3
+  ); /* Pastel gradient harmonisé */
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
   margin: 0;
@@ -46,10 +57,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: #ff99cc;
+  background-color: #f7edf0;
   box-shadow: 10px 10px 38px 19px rgba(0, 0, 0, 0.45);
-  padding: 2%;
-  max-width: 400px;
+  padding: 15px;
+  width: 400px;
+  max-width: 80vw;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -64,11 +76,31 @@ body {
   transform: scale(1.1);
 }
 
+#chapter-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#chapter-description {
+  font-family: "SuperUnicorn";
+  color: #f72585;
+  font-size: 20px;
+  text-align: center;
+}
+
+video,
+img {
+  max-width: 100%;
+  border-radius: 5%;
+}
+
 #chapter-title,
 #titre {
   font-family: "Rusty";
-  color: #dd1985;
-  font-size: 20px;
+  color: #f72585;
+  font-size: 26px;
   text-align: center;
 }
 
@@ -81,25 +113,24 @@ body {
 
 button {
   align-items: center;
-  background-color: #ffcff1;
+  background-color: #ff99c8;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px 0;
-  color: #dd1985;
+  color: #f5f5f5;
   cursor: pointer;
-  font-family: "Rusty";
+  font-family: "SuperUnicorn";
   font-size: 20px;
   margin: 0 10px;
   padding: 2%;
   position: relative;
-  text-decoration: none;
   transition: all 250ms;
 }
 
 button:hover,
 button:focus {
-  background-color: #4eaadf;
-  color: #ffcff1;
+  background-color: #a2d2ff;
+  color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
@@ -108,48 +139,28 @@ button:hover {
 }
 
 button:active {
-  background-color: #93c4d2;
+  background-color: #ff80d3;
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   transform: translateY(0);
 }
 
-#chapter-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-#chapter-description {
-  font-family: "Poppins";
-  font-size: 16px;
-  text-align: center;
-}
-
-video,
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5%;
-}
-
 #mute-checkbox {
   position: fixed;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  z-index: 1;
 }
 
 #mute-checkbox + label {
   font-family: "Barbie";
+  padding: 7px;
   font-size: 20px;
-  color: #ec3b83;
+  color: #ec3b83; /* Teinte rose vif */
   background-color: white;
   border-radius: 5px;
   position: fixed;
   top: 12px;
-  right: 30px;
+  right: 20px;
   cursor: pointer;
   z-index: 1;
 }
@@ -163,97 +174,8 @@ img {
   content: "🔇";
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    background-size: 100% 100%;
-  }
-
-  #jeu {
-    width: 90%;
-    height: auto;
-    max-width: 90vw;
-    max-height: auto;
-  }
-
-  #mute-checkbox + label {
-    font-size: 20px;
-  }
-
-  #chapter-description {
-    font-size: 16px;
-  }
-}
-
-#buttons-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 2.5%;
-}
-
-#mute-checkbox {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 1;
-}
-
-#mute-checkbox + label {
-  font-family: "Barbie";
-  font-size: 24px;
-  color: #ec3b83;
-  background-color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  position: fixed;
-  right: 30px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-#mute-checkbox + label::before {
-  content: "🔊";
-  font-size: 27px;
-  margin-right: 5px;
-}
-
-#mute-checkbox:checked + label::before {
-  content: "🔇";
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-size: 100% 100%;
-  }
-
-  #jeu {
-    width: 90%;
-    height: auto;
-    max-width: 90vw;
-    max-height: auto;
-  }
-
-  #paragraphe {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-  }
-
-  #mute-checkbox + label {
-    font-size: 20px;
-  }
-
-  #chapter-description {
-    font-size: 16px;
-  }
-}
-
 #reset-button {
-  background-color: #ff3377;
+  background-color: #ff3377; /* Rose vif */
   color: #f5f5f5;
   font-family: "Barbie";
   font-size: 20px;
@@ -269,6 +191,23 @@ img {
 }
 
 #reset-button:hover {
-  background-color: #33b5ff;
-  color: #ffcff1;
+  background-color: #33b5ff; /* Bleu doux pour contraste */
+  color: #ffcce5;
+}
+
+/* Pour les mobiles */
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: 100% 100%;
+  }
+
+  #chapter-description {
+    font-size: 16px;
+  }
+}
+
+#buttons-container {
+  display: flex;
+  justify-content: center;
+  padding: 2.5%;
 }
